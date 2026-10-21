@@ -33,6 +33,12 @@ public class OrderDetailRepository {
         jdbcTemplate.update(sql, orderId, foodId, quantity, status);
     }
 
+    // NEW: Appends item to existing order without touching existing items
+    public void addItemsToOrder(Long orderId, Integer foodId, Integer quantity) {
+        String sql = "INSERT INTO order_details (order_id, food_id, quantity, item_status) VALUES (?, ?, ?, ?)";
+        jdbcTemplate.update(sql, orderId, foodId, quantity, "PENDING");
+    }
+
         public void deleteItemsByOrderId(Long orderId) {
         String sql = "DELETE FROM order_details WHERE order_id = ?";
         jdbcTemplate.update(sql, orderId);

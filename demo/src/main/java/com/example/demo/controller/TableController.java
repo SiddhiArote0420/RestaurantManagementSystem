@@ -1,21 +1,30 @@
 package com.example.demo.controller;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import com.example.demo.model.RestaurantTable;
+import com.example.demo.entity.RestaurantTable;
 import com.example.demo.service.TableService;
+
 @RestController
 @RequestMapping("/api/tables")
-@CrossOrigin(origins = "*")
 public class TableController {
+
     @Autowired
     private TableService tableService;
+
     @GetMapping("/all")
-    public List<RestaurantTable> getAllTables() { return tableService.getAllTables(); }
+    @PreAuthorize("isAuthenticated()")
+    public List<RestaurantTable> getAllTables() {
+        return tableService.getAllTables();
+    }
+
     @PostMapping("/add")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Map<String, Object>> addTable(@RequestBody RestaurantTable table) {
         Map<String, Object> response = new HashMap<>();
         try {
@@ -32,7 +41,9 @@ public class TableController {
         }
         return ResponseEntity.ok(response);
     }
+
     @PutMapping("/update/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Map<String, Object>> updateTable(@PathVariable int id, @RequestBody RestaurantTable table) {
         Map<String, Object> response = new HashMap<>();
         try {
@@ -51,6 +62,7 @@ public class TableController {
     }
     
     @PutMapping("/updateStatus/{id}")
+    @PreAuthorize("hasAnyRole('RECEPTIONIST', 'WAITER', 'ADMIN')")
     public ResponseEntity<Map<String, Object>> updateTableStatus(@PathVariable int id, @RequestParam String status, @RequestParam(required=false) Integer staffId) {
         Map<String, Object> response = new HashMap<>();
         try {
@@ -69,6 +81,7 @@ public class TableController {
     }
     
     @DeleteMapping("/delete/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Map<String, Object>> deleteTable(@PathVariable int id) {
         Map<String, Object> response = new HashMap<>();
         try {
@@ -86,3 +99,4 @@ public class TableController {
         return ResponseEntity.ok(response);
     }
 }
+

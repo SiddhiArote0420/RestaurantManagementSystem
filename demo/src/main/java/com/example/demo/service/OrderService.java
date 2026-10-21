@@ -28,7 +28,7 @@ public class OrderService {
         return orders;
     }
 
-        @org.springframework.transaction.annotation.Transactional
+        @org.springframework.transaction.annotation.Transactional //@Transactional - The database operations inside this method are executed within a single transaction.
     public void createOrder(com.example.demo.dto.OrderRequestDTO orderRequest) {
         // Create Order (Status defaults to 'Preparing')
         Long orderId = orderRepository.createOrder(
@@ -74,6 +74,20 @@ public class OrderService {
 
     public void updateOrderStatus(Long orderId, String status) {
         orderRepository.updateOrderStatus(orderId, status);
+    }
+
+    // NEW: Appends items to an existing order without deleting previously ordered items.
+    // Called when customer orders additional food after chef has already started preparing.
+    @org.springframework.transaction.annotation.Transactional
+    public void appendItemsToOrder(Long orderId, com.example.demo.dto.OrderRequestDTO request) {
+        // 1. Append each new item — does NOT delete existing order_details rows
+        if (request.getItems() != null) {
+            for (com.example.demo.dto.OrderRequestDTO.OrderItemRequestDTO item : request.getItems()) {
+                orderDetailRepository.addItemsToOrder(orderId, item.getFoodId(), item.getQuantity());
+            }
+        }
+        // 2. Update the total amount on the order (existing total + new items total is pre-calculated on frontend)
+        orderRepository.updateOrderTotalAmount(orderId, request.getTotalAmount());
     }
 
     public void deleteOrder(Long id) {

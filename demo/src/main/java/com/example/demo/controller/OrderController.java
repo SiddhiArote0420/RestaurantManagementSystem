@@ -4,6 +4,7 @@ import com.example.demo.dto.OrderDTO;
 import com.example.demo.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,7 +15,6 @@ import org.slf4j.LoggerFactory;
 
 @RestController
 @RequestMapping("/api/orders")
-@CrossOrigin(origins = "*")
 public class OrderController {
 
     private static final Logger logger = LoggerFactory.getLogger(OrderController.class);
@@ -23,6 +23,7 @@ public class OrderController {
     private OrderService orderService;
 
     @PostMapping("/add")
+    @PreAuthorize("hasAnyRole('WAITER', 'ADMIN')")
     public ResponseEntity<Map<String, Object>> addOrder(@RequestBody com.example.demo.dto.OrderRequestDTO orderRequest) {
         Map<String, Object> response = new HashMap<>();
         try {
@@ -39,6 +40,7 @@ public class OrderController {
     }
 
     @PutMapping("/update/{id}")
+    @PreAuthorize("hasAnyRole('WAITER', 'ADMIN')")
     public ResponseEntity<Map<String, Object>> updateOrder(@PathVariable Long id, @RequestBody com.example.demo.dto.OrderRequestDTO orderRequest) {
         Map<String, Object> response = new HashMap<>();
         try {
@@ -54,6 +56,7 @@ public class OrderController {
     }
 
     @PutMapping("/updateStatus/{id}")
+    @PreAuthorize("hasAnyRole('CHEF', 'RECEPTIONIST', 'WAITER', 'ADMIN')")
     public ResponseEntity<Map<String, Object>> updateOrderStatus(@PathVariable Long id, @RequestParam String status) {
         Map<String, Object> response = new HashMap<>();
         try {
@@ -69,11 +72,33 @@ public class OrderController {
     }
 
     @GetMapping("/all")
+    @PreAuthorize("isAuthenticated()")
     public List<OrderDTO> getAllOrders() {
         return orderService.getAllOrders();
     }
 
+    // Append items to an existing order (does NOT replace/delete old items)
+    @PostMapping("/addItems/{id}")
+    @PreAuthorize("hasAnyRole('WAITER', 'ADMIN')")
+    public ResponseEntity<Map<String, Object>> addItemsToOrder(
+            @PathVariable Long id,
+            @RequestBody com.example.demo.dto.OrderRequestDTO orderRequest) {
+        Map<String, Object> response = new HashMap<>();
+        try {
+            orderService.appendItemsToOrder(id, orderRequest);
+            logger.info("Items appended to order {}", id);
+            response.put("success", true);
+            response.put("message", "Items added to order successfully");
+        } catch (Exception e) {
+            logger.error("Failed to append items to order {}", id, e);
+            response.put("success", false);
+            response.put("message", "Failed to add items: " + e.getMessage());
+        }
+        return ResponseEntity.ok(response);
+    }
+
     @DeleteMapping("/delete/{id}")
+    @PreAuthorize("hasAnyRole('WAITER', 'ADMIN')")
     public ResponseEntity<?> deleteOrder(@PathVariable Long id) {
         orderService.deleteOrder(id);
         Map<String, String> response = new HashMap<>();
@@ -81,3 +106,4 @@ public class OrderController {
         return ResponseEntity.ok(response);
     }
 }
+

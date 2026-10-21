@@ -5,15 +5,15 @@ import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import com.example.demo.model.Payment;
+import com.example.demo.entity.Payment;
 import com.example.demo.service.PaymentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @RestController
 @RequestMapping("/api/payments")
-@CrossOrigin(origins = "*")
 public class PaymentController {
 
     private static final Logger logger = LoggerFactory.getLogger(PaymentController.class);
@@ -22,11 +22,13 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @GetMapping("/all")
+    @PreAuthorize("hasRole('ADMIN')")
     public List<Payment> getAllPayments() {
         return paymentService.getAllPayments();
     }
 
     @PostMapping("/add")
+    @PreAuthorize("hasAnyRole('RECEPTIONIST', 'ADMIN')")
     public ResponseEntity<Map<String, Object>> addPayment(@RequestBody Payment payment) {
         Map<String, Object> response = new HashMap<>();
         try {
@@ -48,6 +50,7 @@ public class PaymentController {
     }
 
     @PutMapping("/update/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Map<String, Object>> updatePayment(@PathVariable int id, @RequestBody Payment payment) {
         Map<String, Object> response = new HashMap<>();
         try {
@@ -68,6 +71,7 @@ public class PaymentController {
     }
 
     @DeleteMapping("/delete/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Map<String, Object>> deletePayment(@PathVariable int id) {
         Map<String, Object> response = new HashMap<>();
         try {
@@ -87,3 +91,4 @@ public class PaymentController {
         return ResponseEntity.ok(response);
     }
 }
+

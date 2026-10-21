@@ -68,6 +68,12 @@ public class MenuService {
         }
         return null;
     }
+    
+
+    public boolean updateAvailability(Long id, boolean available) {
+        int rows = menuRepository.updateAvailability(id, available);
+        return rows > 0;
+    }
 
     public void deleteMenu(Long id) {
         menuRepository.deleteById(id);
@@ -78,7 +84,8 @@ public class MenuService {
             menu.getMenuId(), 
             menu.getName(), 
             menu.getCategory() != null ? menu.getCategory().getCategoryName() : "Unknown", 
-            menu.getPrice()
+            menu.getPrice(),
+            menu.isAvailable()
         );
     }
 }
