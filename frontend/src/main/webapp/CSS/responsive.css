@@ -1,0 +1,508 @@
+﻿/* ============================================================
+   responsive.css -- Restaurant Management System
+   Centralized Responsive Stylesheet (UI/Layout only)
+   Breakpoints:
+     Desktop  : > 1024px  (default / no media query needed)
+     Tablet   : 768px - 1024px
+     Mobile   : < 768px
+   IMPORTANT: This file only adds layout/spacing rules.
+              It does NOT change any functionality, JS, or
+              existing color/design rules.
+   ============================================================ */
+
+/* ============================================================
+   GLOBAL BASE
+   ============================================================ */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+.wrapper {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ============================================================
+   TABLET (768px - 1024px)
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .sidebar {
+        width: 75px !important;
+        padding: 25px 10px !important;
+    }
+
+    .sidebar .logo h4 {
+        display: none !important;
+    }
+
+    .sidebar ul li a span:not(.tooltip-text) {
+        display: none !important;
+    }
+
+    .sidebar ul li a {
+        justify-content: center !important;
+        padding: 12px !important;
+        gap: 0 !important;
+    }
+
+    .sidebar ul li a i {
+        margin: 0 !important;
+        font-size: 1.25rem !important;
+        width: auto !important;
+    }
+
+    .sidebar ul li:hover .tooltip-text {
+        opacity: 1 !important;
+        transform: translateY(-50%) translateX(0) !important;
+    }
+
+    body.light-mode .sidebar::after {
+        display: none !important;
+    }
+
+    .main {
+        margin-left: 75px !important;
+        width: calc(100% - 75px) !important;
+    }
+
+    .navbar {
+        padding: 0 20px !important;
+    }
+
+    .hero-section {
+        margin: 20px 20px !important;
+        padding: 40px 25px !important;
+    }
+
+    .section-title {
+        padding: 0 20px !important;
+        margin-top: 35px !important;
+        margin-bottom: 18px !important;
+        font-size: 1.5rem !important;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        padding: 0 20px !important;
+        gap: 18px !important;
+    }
+
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        padding: 0 20px !important;
+    }
+
+    .stats-footer {
+        grid-template-columns: repeat(2, 1fr) !important;
+        margin: 40px 20px 0 !important;
+    }
+
+    .chef-section {
+        flex-direction: column !important;
+        margin: 40px 20px !important;
+    }
+
+    .chef-content {
+        padding: 30px !important;
+    }
+
+    .dashboard-banner {
+        padding: 25px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .dashboard-banner h2 {
+        font-size: 1.6rem !important;
+    }
+
+    .row .col-md-3 {
+        flex: 0 0 auto;
+        width: 50% !important;
+    }
+
+    .row > .col {
+        flex: 0 0 auto;
+        width: 50% !important;
+    }
+
+    .row .col-md-4 {
+        flex: 0 0 auto;
+        width: 50% !important;
+    }
+
+    .col-xl-3 {
+        flex: 0 0 auto;
+        width: 50% !important;
+    }
+}
+
+/* ============================================================
+   MOBILE (< 768px)
+   ============================================================ */
+@media (max-width: 767px) {
+
+    /* --- Sidebar off-canvas --- */
+    .sidebar {
+        transform: translateX(-100%) !important;
+        width: 260px !important;
+        padding: 25px 20px !important;
+        z-index: 1050 !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        overflow-y: auto;
+    }
+
+    .sidebar .logo h4 {
+        display: block !important;
+    }
+
+    .sidebar ul li a span:not(.tooltip-text) {
+        display: inline !important;
+    }
+
+    .sidebar ul li a {
+        justify-content: flex-start !important;
+        padding: 12px 18px !important;
+        gap: 15px !important;
+    }
+
+    .sidebar ul li a i {
+        font-size: 1.1rem !important;
+        width: 22px !important;
+    }
+
+    .sidebar.open {
+        transform: translateX(0) !important;
+    }
+
+    body.light-mode .sidebar::after {
+        display: none !important;
+    }
+
+    /* --- Main: full width --- */
+    .main {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+
+    /* --- Navbar --- */
+    .navbar {
+        padding: 0 15px !important;
+        height: auto !important;
+        min-height: 64px !important;
+    }
+
+    .hamburger {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-left {
+        gap: 12px !important;
+        flex-shrink: 1;
+        min-width: 0;
+    }
+
+    .navbar h3,
+    #navbarTitleDisplay {
+        font-size: 1rem !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 160px;
+    }
+
+    .nav-subtitle {
+        display: none !important;
+    }
+
+    .nav-right {
+        gap: 10px !important;
+    }
+
+    .user-info {
+        display: none !important;
+    }
+
+    .navbar .container-fluid {
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+
+    .navbar .container-fluid h3 {
+        font-size: 1rem !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 150px;
+    }
+
+    .admin-info {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+        white-space: nowrap;
+    }
+
+    /* --- Hero Section --- */
+    .hero-section {
+        margin: 15px !important;
+        padding: 30px 20px !important;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem !important;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem !important;
+    }
+
+    .btn-primary-custom {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* --- Section Titles --- */
+    .section-title {
+        padding: 0 15px !important;
+        margin-top: 25px !important;
+        margin-bottom: 15px !important;
+        font-size: 1.3rem !important;
+    }
+
+    /* --- Menu Grid: 1 column --- */
+    .menu-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0 15px !important;
+        gap: 15px !important;
+    }
+
+    .food-card img {
+        height: 150px !important;
+    }
+
+    /* --- Chef Section --- */
+    .chef-section {
+        flex-direction: column !important;
+        margin: 25px 15px !important;
+    }
+
+    .chef-content {
+        padding: 25px 20px !important;
+    }
+
+    .chef-content h2 {
+        font-size: 1.6rem !important;
+    }
+
+    .chef-content .btn-primary-custom {
+        width: 100%;
+    }
+
+    /* --- Reviews: 1 column --- */
+    .reviews-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0 15px !important;
+        gap: 20px !important;
+    }
+
+    /* --- Stats Footer: 2 column --- */
+    .stats-footer {
+        grid-template-columns: repeat(2, 1fr) !important;
+        margin: 30px 15px 0 !important;
+        padding-top: 25px !important;
+        gap: 15px !important;
+    }
+
+    .stat-item h3 {
+        font-size: 1.4rem !important;
+    }
+
+    .stat-item i {
+        font-size: 24px !important;
+    }
+
+    .copyright {
+        padding: 25px 15px 15px !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* --- Dashboard Banner (Waiter/Chef/Rec) --- */
+    .dashboard-banner {
+        padding: 20px !important;
+        margin-bottom: 20px !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+
+    .dashboard-banner h2 {
+        font-size: 1.4rem !important;
+        margin-bottom: 8px !important;
+    }
+
+    .dashboard-banner p {
+        font-size: 0.9rem !important;
+    }
+
+    .dashboard-banner .fa-4x {
+        display: none !important;
+    }
+
+    /* --- Stat Cards: 1 column --- */
+    .row .col-md-3,
+    .row .col-md-4,
+    .row .col-md-6 {
+        flex: 0 0 auto !important;
+        width: 100% !important;
+    }
+
+    .row > .col {
+        flex: 0 0 auto !important;
+        width: 100% !important;
+    }
+
+    .col-xl-3,
+    .col-lg-6 {
+        flex: 0 0 auto !important;
+        width: 100% !important;
+    }
+
+    /* --- Admin light-mode hero banner --- */
+    .dashboard-hero-banner {
+        padding: 25px 20px !important;
+    }
+
+    .dashboard-hero-banner h2 {
+        font-size: 1.4rem !important;
+    }
+
+    .dashboard-hero-banner p {
+        font-size: 0.9rem !important;
+    }
+
+    .dashboard-hero-banner button {
+        width: 100% !important;
+    }
+
+    /* --- Tables: horizontally scrollable --- */
+    .table-responsive {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 8px;
+    }
+
+    .custom-table th,
+    .custom-table td,
+    .table th,
+    .table td {
+        white-space: nowrap;
+        font-size: 0.82rem !important;
+        padding: 10px 14px !important;
+    }
+
+    /* --- Category Filter Pills (Waiter) --- */
+    .cat-filter-btn {
+        font-size: 0.72rem !important;
+        padding: 4px 10px !important;
+    }
+
+    /* --- Menu and Cart Panels (Waiter) --- */
+    .row .col-lg-8,
+    .row .col-lg-4 {
+        flex: 0 0 auto !important;
+        width: 100% !important;
+    }
+
+    .cart-panel {
+        height: auto !important;
+        max-height: 400px;
+        overflow-y: auto;
+    }
+
+    /* --- Waiter table cards: 2 per row on mobile --- */
+    .row .col-md-3.col-sm-6 {
+        width: 50% !important;
+    }
+
+    /* --- Modals --- */
+    .modal-dialog {
+        margin: 10px !important;
+        max-width: calc(100vw - 20px) !important;
+    }
+
+    .modal-content {
+        border-radius: 12px !important;
+    }
+
+    /* --- Pagination --- */
+    .pagination-container {
+        flex-direction: column !important;
+        gap: 10px !important;
+        align-items: flex-start !important;
+        padding: 12px 16px !important;
+    }
+
+    /* --- Search box: full width --- */
+    .search-box {
+        min-width: unset !important;
+        width: 100% !important;
+    }
+
+    /* --- Food mini-cards: horizontal scroll (Admin light) --- */
+    .d-flex.gap-3.overflow-auto.pb-2 {
+        flex-wrap: nowrap;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* --- Quick Actions Buttons (Admin light) --- */
+    .btn.border.text-start {
+        font-size: 0.85rem !important;
+        padding: 10px 12px !important;
+    }
+}
+
+/* ============================================================
+   EXTRA SMALL (< 480px)
+   ============================================================ */
+@media (max-width: 479px) {
+
+    .navbar h3,
+    #navbarTitleDisplay,
+    .navbar .container-fluid h3 {
+        font-size: 0.9rem !important;
+        max-width: 120px;
+    }
+
+    .stats-footer {
+        grid-template-columns: 1fr !important;
+    }
+
+    .dashboard-banner h2 {
+        font-size: 1.2rem !important;
+    }
+
+    .hero-content h1 {
+        font-size: 1.7rem !important;
+    }
+
+    .row .col-md-3.col-sm-6 {
+        width: 100% !important;
+    }
+}

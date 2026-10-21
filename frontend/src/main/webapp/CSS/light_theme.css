@@ -1,0 +1,810 @@
+/* light_theme.css - Premium SaaS Redesign v4.0 */
+
+/* Global Body/Main Background */
+body.light-mode {
+    background-color: #FCF9F6 !important;
+    color: #1F2937 !important;
+}
+
+body.light-mode .main {
+    background-color: #FCF9F6 !important;
+}
+
+body.light-mode .crud-management-page {
+    background: transparent !important;
+}
+body.light-mode .crud-management-page::before {
+    display: none !important;
+}
+
+/* -------------------------------------
+   SIDEBAR 
+   ------------------------------------- */
+body.light-mode .sidebar {
+    background-color: #FFFFFF !important;
+    border-right: none !important;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.02) !important;
+}
+
+body.light-mode .sidebar .logo {
+    border-bottom: none !important;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+body.light-mode .sidebar .logo h4 {
+    color: #1F2937 !important;
+    font-weight: 700 !important;
+}
+
+body.light-mode .sidebar .logo i {
+    color: #F97316 !important; /* Orange logo icon */
+}
+
+body.light-mode .sidebar ul li {
+    margin-bottom: 8px !important;
+}
+
+body.light-mode .sidebar ul li a {
+    color: #6B7280 !important;
+    border-radius: 12px !important;
+    padding: 14px 20px !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+    margin: 0 16px !important;
+    display: flex;
+    align-items: center;
+}
+
+body.light-mode .sidebar ul li a i {
+    color: #9CA3AF !important;
+    margin-right: 12px !important;
+    font-size: 1.1rem !important;
+    width: 24px;
+    text-align: center;
+}
+
+body.light-mode .sidebar ul li a:hover {
+    background-color: #FFF3E0 !important;
+    color: #F97316 !important;
+}
+
+body.light-mode .sidebar ul li a:hover i {
+    color: #F97316 !important;
+}
+
+/* Active Sidebar Item - Orange Pill */
+body.light-mode .sidebar ul li.active a {
+    background-color: #F97316 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.2) !important;
+}
+
+body.light-mode .sidebar ul li.active a i {
+    color: #FFFFFF !important;
+}
+
+body.light-mode .sidebar ul li.active {
+    border-left: none !important;
+    background: transparent !important;
+}
+
+/* -------------------------------------
+   NAVBAR (HEADER)
+   ------------------------------------- */
+body.light-mode .navbar, 
+body.light-mode header {
+    background-color: transparent !important; /* Merge with main background */
+    border-bottom: none !important;
+    box-shadow: none !important;
+    padding: 20px 30px !important;
+    margin-bottom: 0 !important;
+}
+
+body.light-mode .navbar h3,
+body.light-mode #navbarTitle {
+    color: #1F2937 !important;
+    font-size: 1.6rem !important;
+}
+
+body.light-mode .navbar .admin-info {
+    color: #4B5563 !important;
+    background: #FFFFFF !important;
+    padding: 8px 16px !important;
+    border-radius: 50px !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03) !important;
+    border: 1px solid rgba(0,0,0,0.02) !important;
+}
+
+body.light-mode .navbar .admin-info i {
+    color: #F97316 !important;
+}
+
+body.light-mode .navbar .admin-info span {
+    color: #1F2937 !important;
+    font-weight: 600 !important;
+}
+
+/* -------------------------------------
+   DASHBOARD BANNER (HERO SECTION)
+   ------------------------------------- */
+body.light-mode .dashboard-banner {
+    /* Create a white-to-transparent fade over the background image */
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 45%, rgba(255,255,255,0) 100%), url('Images/hero_banner.jpg') !important;
+    background-size: cover !important;
+    background-position: center right !important;
+    border-radius: 20px !important;
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04) !important;
+    padding: 50px 40px !important;
+}
+
+body.light-mode .dashboard-banner h2 {
+    color: #1F2937 !important;
+    font-size: 2.2rem !important;
+}
+
+body.light-mode .dashboard-banner h2 span {
+    color: #F97316 !important; /* Highlight Name in Orange */
+}
+
+body.light-mode .dashboard-banner p {
+    color: #4B5563 !important;
+}
+
+/* -------------------------------------
+   STAT CARDS & GENERAL CARDS
+   ------------------------------------- */
+body.light-mode .stat-card,
+body.light-mode .dashboard-card,
+body.light-mode .premium-dark-card,
+body.light-mode .card,
+body.light-mode .modal-content,
+body.light-mode .menu-card,
+body.light-mode .cart-panel,
+body.light-mode .food-card,
+body.light-mode .review-card,
+body.light-mode .chef-section,
+body.light-mode .receipt-content,
+body.light-mode .menu-item-card,
+body.light-mode .advanced-card,
+body.light-mode .table-card {
+    background-color: #FFFFFF !important;
+    color: #1F2937 !important;
+    border: none !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03) !important;
+    border-radius: 16px !important;
+}
+
+/* Stat Cards specific hover */
+body.light-mode .stat-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.06) !important;
+}
+
+body.light-mode .stat-card h3 {
+    color: #1F2937 !important;
+    font-size: 1.8rem !important;
+}
+
+body.light-mode .stat-card p.text-muted {
+    color: #6B7280 !important;
+}
+
+/* Stat Icons Pastel Background overrides */
+/* Default orange */
+body.light-mode .stat-icon {
+    background: #FFF3E0 !important;
+    color: #F57C00 !important;
+    border-radius: 12px !important; /* Squarish corners like mockup */
+}
+/* By injecting !important to children of stat-card based on their inline colors, we can try to force pastel */
+body.light-mode .stat-card:nth-child(2) .stat-icon { background: #E8F5E9 !important; color: #43A047 !important; } /* Green */
+body.light-mode .stat-card:nth-child(3) .stat-icon { background: #FFF3E0 !important; color: #F57C00 !important; } /* Orange */
+body.light-mode .stat-card:nth-child(4) .stat-icon { background: #F3E5F5 !important; color: #8E24AA !important; } /* Purple/Pink */
+body.light-mode .stat-card:nth-child(5) .stat-icon { background: #FFEBEE !important; color: #E53935 !important; } /* Red */
+
+
+/* -------------------------------------
+   TYPOGRAPHY
+   ------------------------------------- */
+body.light-mode h1, body.light-mode h2, body.light-mode h3, body.light-mode h4, body.light-mode h5, body.light-mode h6,
+body.light-mode .modal-title,
+body.light-mode .food-card-body h5,
+body.light-mode .stat-item h3,
+body.light-mode .order-card strong,
+body.light-mode .menu-item-card strong,
+body.light-mode .table-card strong {
+    color: #111827 !important;
+    font-weight: 700 !important;
+}
+
+body.light-mode p, body.light-mode .text-muted, body.light-mode .text-light, body.light-mode small {
+    color: #6B7280 !important;
+}
+
+/* -------------------------------------
+   TABLES
+   ------------------------------------- */
+body.light-mode .table-responsive {
+    background-color: #FFFFFF !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03) !important;
+}
+
+body.light-mode .table,
+body.light-mode .custom-table {
+    color: #1F2937 !important;
+    margin-bottom: 0 !important;
+}
+
+body.light-mode .table thead th,
+body.light-mode .custom-table thead th {
+    background-color: #F9FAFB !important;
+    color: #6B7280 !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.5px !important;
+    border-bottom: 1px solid #F3F4F6 !important;
+    border-top: none !important;
+}
+
+body.light-mode .table tbody tr,
+body.light-mode .custom-table tbody tr {
+    background-color: #FFFFFF !important;
+    border-bottom: 1px solid #F3F4F6 !important;
+}
+
+body.light-mode .table tbody td,
+body.light-mode .custom-table tbody td {
+    color: #374151 !important;
+}
+
+body.light-mode .table tbody tr:hover,
+body.light-mode .custom-table tbody tr:hover {
+    background-color: #F9FAFB !important;
+}
+
+/* -------------------------------------
+   BUTTONS
+   ------------------------------------- */
+body.light-mode .btn-orange,
+body.light-mode .btn-primary {
+    background-color: #F97316 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 50px !important; /* Fully rounded buttons like mockup */
+    padding: 10px 24px !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.2) !important;
+}
+
+body.light-mode .btn-orange:hover,
+body.light-mode .btn-primary:hover {
+    background-color: #EA580C !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(249, 115, 22, 0.3) !important;
+}
+
+body.light-mode .btn-outline-light {
+    border-color: #E5E7EB !important;
+    color: #374151 !important;
+    border-radius: 50px !important;
+}
+
+body.light-mode .btn-outline-light:hover {
+    background-color: #F3F4F6 !important;
+    color: #111827 !important;
+}
+
+/* -------------------------------------
+   FORMS & INPUTS
+   ------------------------------------- */
+body.light-mode .form-control,
+body.light-mode .form-select,
+body.light-mode .search-input-dark {
+    background-color: #FFFFFF !important;
+    color: #1F2937 !important;
+    border: 1px solid #E5E7EB !important;
+    border-radius: 50px !important; /* Rounded inputs */
+    padding: 10px 20px !important;
+}
+
+body.light-mode .form-control:focus,
+body.light-mode .form-select:focus {
+    border-color: #F97316 !important;
+    box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1) !important;
+}
+
+/* -------------------------------------
+   BADGES
+   ------------------------------------- */
+body.light-mode .badge.bg-warning {
+    background-color: #FEF3C7 !important; color: #D97706 !important; border: none !important;
+}
+body.light-mode .badge.bg-success {
+    background-color: #DCFCE7 !important; color: #166534 !important; border: none !important;
+}
+body.light-mode .badge.bg-danger {
+    background-color: #FEE2E2 !important; color: #991B1B !important; border: none !important;
+}
+body.light-mode .badge.bg-info {
+    background-color: #E0F2FE !important; color: #0369A1 !important; border: none !important;
+}
+body.light-mode .badge {
+    padding: 6px 12px !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+}
+
+/* -------------------------------------
+   ORDER CARDS (3D Effect)
+   ------------------------------------- */
+body.light-mode .order-card {
+    background-color: #FFFFFF !important;
+    border: 1px solid #F3F4F6 !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03) !important;
+    border-radius: 16px !important;
+    transition: all 0.3s ease !important;
+}
+body.light-mode .order-card:hover {
+    box-shadow: 0 12px 25px rgba(0,0,0,0.06) !important;
+    transform: translateY(-4px) !important;
+    border-color: #E5E7EB !important;
+}
+
+body.light-mode .order-card .bg-dark {
+    background-color: #F3F4F6 !important;
+    color: #374151 !important;
+    border: none !important;
+    border-radius: 6px !important;
+}
+
+/* -------------------------------------
+   PAGINATION
+   ------------------------------------- */
+body.light-mode .pagination-container {
+    background-color: #FFFFFF !important;
+    border-top: 1px solid #F3F4F6 !important;
+    border-radius: 0 0 16px 16px !important;
+}
+body.light-mode .btn-pagination { 
+    background-color: #FFFFFF !important;
+    color: #4B5563 !important; 
+    border: 1px solid #E5E7EB !important;
+    border-radius: 8px !important;
+}
+body.light-mode .btn-pagination:hover:not(:disabled) { 
+    background-color: #F9FAFB !important;
+    color: #1F2937 !important; 
+    border-color: #D1D5DB !important;
+}
+body.light-mode .btn-pagination:disabled {
+    background-color: #F9FAFB !important;
+    color: #9CA3AF !important;
+}
+
+/* Toast */
+body.light-mode .swal2-popup {
+    border-radius: 16px !important;
+}
+
+/* ==========================================================
+   VISIBILITY TOGGLES
+========================================================== */
+body:not(.light-mode) .light-mode-only {
+    display: none !important;
+}
+
+body.light-mode .dark-mode-only {
+    display: none !important;
+}
+
+/* ==========================================================
+   PREMIUM SAAS NAVBAR
+========================================================== */
+body.light-mode .premium-navbar {
+    background-color: transparent !important;
+    padding: 24px 30px !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+body.light-mode .premium-navbar .search-box input {
+    background: #FFFFFF !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02) !important;
+    width: 300px;
+}
+
+body.light-mode .premium-navbar .btn-light {
+    background: #FFFFFF !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02) !important;
+    color: #4B5563 !important;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.light-mode .premium-navbar .btn-light:hover {
+    color: #F97316 !important;
+    transform: translateY(-2px);
+}
+
+body.light-mode .premium-navbar .profile-block {
+    cursor: pointer;
+    background: #FFFFFF !important;
+    padding: 6px 16px 6px 6px !important;
+    border-radius: 50px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02) !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+    transition: all 0.3s ease;
+}
+
+body.light-mode .premium-navbar .profile-block:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.04) !important;
+}
+
+/* ==========================================================
+   3D FLOATING TABLE CARDS
+========================================================== */
+body.light-mode .table-card {
+    position: relative;
+    overflow: hidden;
+    padding: 24px !important;
+    border-left: 4px solid #F97316 !important;
+}
+
+/* Base shape for the 3D table image */
+body.light-mode .table-card::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 140px;
+    height: 140px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    opacity: 0.9;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Available Table Image */
+body.light-mode .table-card:has(.status-available)::after {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/5024/5024479.png'); /* Fallback beautiful 3D-like table icon */
+    filter: hue-rotate(80deg) drop-shadow(0 10px 10px rgba(0,0,0,0.1));
+}
+
+/* Occupied Table Image */
+body.light-mode .table-card:has(.status-occupied)::after {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/5024/5024479.png'); /* Fallback beautiful 3D-like table icon */
+    filter: hue-rotate(-20deg) drop-shadow(0 10px 10px rgba(0,0,0,0.1));
+    border-left-color: #E53935 !important;
+}
+body.light-mode .table-card:has(.status-occupied) {
+    border-left: 4px solid #E53935 !important;
+}
+
+body.light-mode .table-card > * {
+    position: relative;
+    z-index: 2; /* Keep text above the absolute image */
+}
+
+/* Custom Table Card Button */
+body.light-mode .table-card button {
+    border-radius: 8px !important;
+    width: 60% !important; /* Don't overlap the image */
+}
+
+/* ==========================================================
+   SIDEBAR BOTTOM BANNER (CSS ONLY)
+========================================================== */
+body.light-mode .sidebar {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+body.light-mode .sidebar ul {
+    flex-grow: 1;
+}
+
+body.light-mode .sidebar::after {
+    content: 'Good Service,\A Great Experience!';
+    white-space: pre;
+    display: block;
+    margin: 20px;
+    padding: 15px;
+    background-color: #FFF3E0;
+    color: #1F2937;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 16px;
+    text-align: center;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/5024/5024479.png');
+    background-size: 60px;
+    background-repeat: no-repeat;
+    background-position: center top 15px;
+    padding-top: 85px;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+/* ==========================================================
+   STAT CARD WAVES (LIGHT MODE)
+========================================================== */
+body.light-mode .stat-card {
+    padding-bottom: 2.5rem !important;
+}
+.stat-card-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 45px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.wave-orange {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23FFF3E0' d='M0,224L80,213.3C160,203,320,181,480,181.3C640,181,800,203,960,202.7C1120,203,1280,181,1360,170.7L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z'%3E%3C/path%3E%3Cpath fill='none' stroke='%23F97316' stroke-width='4' d='M0,224L80,213.3C160,203,320,181,480,181.3C640,181,800,203,960,202.7C1120,203,1280,181,1360,170.7L1440,160'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.wave-green {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23E8F5E9' d='M0,192L80,208C160,224,320,256,480,240C640,224,800,160,960,149.3C1120,139,1280,181,1360,202.7L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z'%3E%3C/path%3E%3Cpath fill='none' stroke='%2343A047' stroke-width='4' d='M0,192L80,208C160,224,320,256,480,240C640,224,800,160,960,149.3C1120,139,1280,181,1360,202.7L1440,224'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.wave-purple {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23F3E5F5' d='M0,128L80,144C160,160,320,192,480,213.3C640,235,800,245,960,218.7C1120,192,1280,128,1360,96L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z'%3E%3C/path%3E%3Cpath fill='none' stroke='%238E24AA' stroke-width='4' d='M0,128L80,144C160,160,320,192,480,213.3C640,235,800,245,960,218.7C1120,192,1280,128,1360,96L1440,64'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.wave-red {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23FFEBEE' d='M0,96L80,128C160,160,320,224,480,245.3C640,267,800,245,960,208C1120,171,1280,117,1360,90.7L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z'%3E%3C/path%3E%3Cpath fill='none' stroke='%23E53935' stroke-width='4' d='M0,96L80,128C160,160,320,224,480,245.3C640,267,800,245,960,208C1120,171,1280,117,1360,90.7L1440,64'%3E%3C/path%3E%3C/svg%3E");
+}
+
+/* ==========================================================
+   SALES DASHBOARD SPECIFIC (LIGHT MODE)
+========================================================== */
+body.light-mode .saas-stat-card {
+    background-color: #FFFFFF !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03) !important;
+    border-radius: 12px;
+}
+body.light-mode .summary-title {
+    color: #6B7280 !important;
+    font-weight: 700;
+}
+body.light-mode .summary-value {
+    color: #F97316 !important;
+}
+body.light-mode .summary-icon {
+    background-color: #FFF3E0 !important;
+}
+body.light-mode .chart-title {
+    color: #111827 !important;
+}
+body.light-mode .chart-header {
+    border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+}
+
+body.light-mode .table-dark-custom th {
+    background-color: #FFF3E0 !important;
+    color: #1F2937 !important;
+    border-bottom: none !important;
+}
+body.light-mode .table-dark-custom td {
+    color: #4B5563 !important;
+    border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+}
+body.light-mode .table-dark-custom tbody tr:hover {
+    background-color: #FAFAFA !important;
+}
+
+/* FIX SEARCH BAR SQUISH */
+body.light-mode .premium-navbar .search-box {
+    min-width: 280px;
+}
+body.light-mode .premium-navbar .search-box input {
+    width: 100% !important;
+}
+
+/* FIX CHEF ORDER CARDS TEXT VISIBILITY IN LIGHT MODE */
+body.light-mode .order-card .text-white {
+    color: #1F2937 !important;
+}
+body.light-mode .order-card .text-muted {
+    color: #6B7280 !important;
+}
+
+/* FALLBACK FOR TABLE IMAGES IF EXTERNAL FAILS */
+body.light-mode .table-card::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 140px;
+    height: 140px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    opacity: 0.95;
+    z-index: 1;
+    pointer-events: none;
+    /* Very robust inline SVG for a 3D-looking dining table */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cellipse cx='50' cy='35' rx='45' ry='15' fill='%23E0E0E0' stroke='%23BDBDBD' stroke-width='2'/%3E%3Crect x='45' y='50' width='10' height='30' fill='%239E9E9E'/%3E%3Cpath d='M35,80 L65,80 L70,85 L30,85 Z' fill='%23757575'/%3E%3Cellipse cx='20' cy='45' rx='10' ry='4' fill='%2381C784'/%3E%3Crect x='15' y='49' width='10' height='20' fill='%234CAF50'/%3E%3Cellipse cx='80' cy='45' rx='10' ry='4' fill='%2381C784'/%3E%3Crect x='75' y='49' width='10' height='20' fill='%234CAF50'/%3E%3C/svg%3E") !important;
+}
+
+body.light-mode .table-card:has(.status-occupied)::after,
+body.light-mode .table-card:has(.bg-warning)::after {
+    /* Red chairs for occupied */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cellipse cx='50' cy='35' rx='45' ry='15' fill='%23E0E0E0' stroke='%23BDBDBD' stroke-width='2'/%3E%3Crect x='45' y='50' width='10' height='30' fill='%239E9E9E'/%3E%3Cpath d='M35,80 L65,80 L70,85 L30,85 Z' fill='%23757575'/%3E%3Cellipse cx='20' cy='45' rx='10' ry='4' fill='%23E57373'/%3E%3Crect x='15' y='49' width='10' height='20' fill='%23F44336'/%3E%3Cellipse cx='80' cy='45' rx='10' ry='4' fill='%23E57373'/%3E%3Crect x='75' y='49' width='10' height='20' fill='%23F44336'/%3E%3C/svg%3E") !important;
+}
+
+
+/* USE THE USER'S ACTUAL TABLE IMAGE IN LIGHT MODE */
+body.light-mode .table-card::after {
+    background-image: url('../Images/table_available.jpg') !important;
+    border-radius: 50%; /* Just in case it has hard edges */
+}
+
+body.light-mode .table-card:has(.status-occupied)::after,
+body.light-mode .table-card:has(.bg-warning)::after {
+    background-image: url('../Images/table_available.jpg') !important;
+    filter: hue-rotate(-20deg) brightness(0.9) !important;
+}
+
+
+/* FIX STAFF MENU STRIPED TABLE IN LIGHT MODE */
+body.light-mode .table-dark-custom tbody tr:nth-child(even),
+body.light-mode .custom-table tbody tr:nth-child(even),
+body.light-mode .custom-table tbody tr:nth-of-type(even) {
+    background-color: #FAFAFA !important;
+}
+
+body.light-mode .table-dark-custom tbody tr:nth-child(odd),
+body.light-mode .custom-table tbody tr:nth-child(odd),
+body.light-mode .custom-table tbody tr:nth-of-type(odd) {
+    background-color: #FFFFFF !important;
+}
+
+body.light-mode .table-dark-custom td,
+body.light-mode .custom-table td {
+    color: #4B5563 !important;
+    background-color: transparent !important;
+}
+
+body.light-mode .table-card::after {
+    mix-blend-mode: multiply;
+}
+
+
+
+/* ==========================================================
+   UNIFIED ADMIN DASHBOARD - LIGHT THEME OVERRIDES
+========================================================== */
+body.light-mode .dashboard-container {
+    background-color: #F8F9FA !important;
+}
+body.light-mode .premium-navbar {
+    background-color: #FFFFFF !important;
+    border-bottom: 1px solid #E5E7EB !important;
+}
+body.light-mode .btn-nav-circle {
+    background-color: #F3F4F6 !important;
+    color: #4B5563 !important;
+}
+body.light-mode .btn-nav-circle:hover {
+    background-color: #E5E7EB !important;
+    color: #111827 !important;
+}
+body.light-mode .nav-title {
+    color: #111827 !important;
+}
+body.light-mode .nav-subtitle {
+    color: #6B7280 !important;
+}
+body.light-mode .search-box input {
+    background-color: #FFFFFF !important;
+    border: 1px solid #D1D5DB !important;
+    color: #111827 !important;
+}
+body.light-mode .search-box input::placeholder {
+    color: #9CA3AF !important;
+}
+body.light-mode .search-box input:focus {
+    border-color: #F97316 !important;
+    box-shadow: 0 0 0 0.25rem rgba(249,115,22,0.25) !important;
+}
+body.light-mode .search-box {
+    background-color: #FFFFFF !important;
+    border: 1px solid #D1D5DB !important;
+}
+body.light-mode .search-box .input-group-text {
+    background-color: #F9FAFB !important;
+    color: #9CA3AF !important;
+    border: none !important;
+}
+
+/* Dark theme search box (default / dark-theme) */
+body:not(.light-mode) .search-box {
+    background-color: rgba(17, 24, 39, 0.9) !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    border-radius: 10px !important;
+}
+body:not(.light-mode) .search-box .input-group-text {
+    background-color: transparent !important;
+    border: none !important;
+    color: #9ca3af !important;
+}
+body:not(.light-mode) .search-box .form-control,
+body:not(.light-mode) .search-box input[type="text"] {
+    background-color: transparent !important;
+    border: none !important;
+    color: #F8F6F2 !important;
+    box-shadow: none !important;
+}
+body:not(.light-mode) .search-box .form-control::placeholder,
+body:not(.light-mode) .search-box input[type="text"]::placeholder {
+    color: #6b7280 !important;
+    opacity: 1 !important;
+}
+
+
+/* Hero Banner Light */
+body.light-mode .dashboard-hero-banner {
+    background: linear-gradient(135deg, rgba(249,115,22,0.05) 0%, rgba(255,255,255,1) 100%) !important;
+    border: 1px solid rgba(0,0,0,0.05) !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02) !important;
+}
+
+/* Saas Stat Cards Light */
+body.light-mode .saas-stat-card,
+body.light-mode .unified-card {
+    background-color: #FFFFFF !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03) !important;
+}
+body.light-mode .card-title-text {
+    color: #111827 !important;
+}
+body.light-mode .card-btn-text {
+    color: #4B5563 !important;
+    border-color: #D1D5DB !important;
+}
+body.light-mode .card-btn-text:hover {
+    background-color: #F3F4F6 !important;
+}
+
+/* Quick Actions Light */
+body.light-mode .btn-action {
+    background-color: #FFFFFF !important;
+    border: 1px solid #E5E7EB !important;
+    color: #111827 !important;
+}
+body.light-mode .btn-action:hover {
+    background-color: #F9FAFB !important;
+    border-color: #D1D5DB !important;
+}
+
+/* Food Mini Cards Light */
+body.light-mode .food-mini-card {
+    background-color: #FFFFFF !important;
+    border: 1px solid #E5E7EB !important;
+}
+body.light-mode .food-mini-card:hover {
+    border-color: #F97316 !important;
+    box-shadow: 0 4px 12px rgba(249,115,22,0.1) !important;
+}
+body.light-mode .custom-scrollbar::-webkit-scrollbar-track { background: #F3F4F6 !important; }
+body.light-mode .custom-scrollbar::-webkit-scrollbar-thumb { background: #D1D5DB !important; }
+
