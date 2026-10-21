@@ -4,6 +4,9 @@
 
 **An Enterprise-Grade, Role-Based Restaurant Operations & POS Platform built with Spring Boot, JWT Security, MySQL, and Jakarta EE (JSP)**
 
+### 🚀 **[🌐 View Live Application (foodhubserver.co.in)](https://foodhubserver.co.in)** &nbsp;|&nbsp; 👩‍💻 **[Developer Portfolio](https://siddhiarote0420.github.io/Portfolio/)**
+
+[![Live Demo](https://img.shields.io/badge/🚀_LIVE_APPLICATION-foodhubserver.co.in-FF3E6C?style=for-the-badge)](https://foodhubserver.co.in)
 [![Java 17](https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/projects/jdk/17/)
 [![Spring Boot](https://img.shields.io/badge/Spring_Boot-REST_API-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
 [![Spring Security](https://img.shields.io/badge/Spring_Security-JWT_Auth-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white)](https://spring.io/projects/spring-security)
